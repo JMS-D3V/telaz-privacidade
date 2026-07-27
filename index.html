@@ -49,7 +49,7 @@
 <header>
   <h1>Política de Privacidade</h1>
   <p class="sub"><strong>Telaz Wallpapers</strong> · <code>br.com.jms.wallpapers</code><br>
-  Última atualização: 27 de julho de 2026</p>
+  Última atualização: 27 de julho de 2026 (revisão da seção 8)</p>
 </header>
 
 <h2>Em uma tela: o que você precisa saber</h2>
@@ -207,17 +207,36 @@
 
 <h2>8. Permissões que o app pede, e por quê</h2>
 
+<p><strong>As que o app pede por conta própria:</strong></p>
+
 <div class="tablewrap"><table>
 <thead><tr><th>Permissão</th><th>Para quê</th></tr></thead>
 <tbody>
 <tr><td><code>INTERNET</code></td><td>Baixar o catálogo e as imagens; exibir anúncios</td></tr>
 <tr><td><code>SET_WALLPAPER</code></td><td>Aplicar o papel de parede que você escolheu</td></tr>
-<tr><td><code>AD_ID</code></td><td>Exigida pelo Android para que o SDK de anúncios acesse o identificador de publicidade</td></tr>
-<tr><td><code>WRITE_EXTERNAL_STORAGE</code><br>(somente Android 7 a 9)</td><td>Salvar o papel de parede na sua galeria nessas versões antigas do Android. A partir do Android 10 nenhuma permissão é necessária para isso, e o app não a pede</td></tr>
+<tr><td><code>WRITE_EXTERNAL_STORAGE</code><br>(somente Android 7 a 9)</td><td>Salvar o papel de parede na sua galeria nessas versões antigas. A partir do Android 10 nenhuma permissão é necessária, e o app não a pede. Recusar não impede aplicar o papel de parede</td></tr>
+<tr><td><code>READ_EXTERNAL_STORAGE</code><br>(somente Android 7 a 9)</td><td>Reler o arquivo que o próprio app acabou de gravar na galeria, nessas mesmas versões antigas</td></tr>
 </tbody>
 </table></div>
 
-<p>O que o app <strong>não</strong> pede: localização, câmera, microfone, contatos, agenda, telefone e SMS.</p>
+<p><strong>As que vêm com o SDK de anúncios do Google.</strong> Elas aparecem na ficha da Play mesmo sem o app as usar diretamente. Estão listadas aqui porque <strong>você as vê lá</strong>, e uma lista incompleta seria pior do que uma lista longa:</p>
+
+<div class="tablewrap"><table>
+<thead><tr><th>Permissão</th><th>Para quê</th></tr></thead>
+<tbody>
+<tr><td><code>AD_ID</code></td><td>Ler o identificador de publicidade do aparelho (seção 4.1)</td></tr>
+<tr><td><code>ACCESS_NETWORK_STATE</code></td><td>O SDK verifica se há conexão antes de pedir um anúncio</td></tr>
+<tr><td><code>ACCESS_ADSERVICES_AD_ID</code><br><code>ACCESS_ADSERVICES_ATTRIBUTION</code><br><code>ACCESS_ADSERVICES_TOPICS</code></td><td>Do <strong>Privacy Sandbox</strong> do Android — a iniciativa do Google para substituir o identificador de publicidade por sinais que ficam <strong>no seu aparelho</strong>. O <code>TOPICS</code> permite que o sistema derive categorias de interesse localmente e entregue só a categoria ao anunciante, sem entregar seu histórico. Quem opera isso é o Android e o Google, não nós; você controla em <em>Configurações → Google → Anúncios</em></td></tr>
+<tr><td><code>WAKE_LOCK</code></td><td>O SDK impede o aparelho de dormir enquanto termina de carregar ou medir um anúncio</td></tr>
+<tr><td><code>FOREGROUND_SERVICE</code></td><td>Usada pelo SDK em operações que precisam concluir mesmo com o app em segundo plano</td></tr>
+</tbody>
+</table></div>
+
+<p>Há ainda uma permissão com o nome do próprio app (<code>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>), gerada automaticamente pelas bibliotecas do Android. Ela <strong>não dá acesso a nada seu</strong>: serve para o app impedir que outros aplicativos conversem com componentes internos dele.</p>
+
+<p><strong>Nós não pedimos nenhuma dessas do segundo grupo e não podemos removê-las sem remover a publicidade</strong> — que é o que paga o app ser gratuito. A compra "remover anúncios" desliga o <strong>uso</strong>, mas a permissão continua listada, porque o SDK continua embutido.</p>
+
+<p>O que o app <strong>não</strong> pede, em nenhuma hipótese: localização, câmera, microfone, contatos, agenda, telefone e SMS.</p>
 
 <h2>9. Compartilhamento com terceiros e transferência internacional</h2>
 
